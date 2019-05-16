@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Trombinoscope</title>
+		
+		<!-- Lien vers le fichier de mise en forme trombi.css -->
+		<link type="text/css" rel="stylesheet" href="css/trombicss.css" />
+		
+		<!-- Lien vers le fichier javascript  jquery-3.4.1.min.js (pour utiliser les fonctions de ce fichier) -->
+		<script type="text/javascript"  src="js/jquery-3.4.1.min.js" ></script>
+		
+		<!-- Lien vers le fichier javascript  trombi.js (pour utiliser les fonctions de ce fichier) -->
+		<script type="text/javascript"  src="js/trombi.js" ></script>
+	</head>
+	
+	<body>
+		<!-- titre en haut de la page web -->
+		<h1>TROMBINOSCOPE</h1>
+		
+		<br/>
+		
+		<!-- Création d'un bouton qui appelle la fonction JavaScript "afficherTrombinoscope() quand on clique dessus -->
+		<input type="button" value="Afficher le trombinoscope" onClick="afficherTrombinoscope();"/>
+		
+		<br/>
+		
+		<br/>
+
+
+		<div>
+			<!-- Formulaire permettant d'ajouter une ligne au tableau du trombinoscope -->
+			<!-- Attention actuellement la photo ne peut pas être chargé, la photo par défaut est chargée à la place voir cours php-->
+			<form method="GET" action="#" target="_self" id="idformadd">   <!-- avec GET on va dans barre en haut toutes les données du formulaire
+			sinon il faudrait POST mais çà marche pas ! ... action permet d'envoyer les infos vers une autre page mais on ne veut pas d'où #
+			... target avec self évite le pop up -->
+				<input type="text" placeholder="Nom" id="idnom"/><br/>
+				<!-- 1er champ du formulaire-->
+				<input type="text" placeholder="Prénom" id="idprenom"/><br/>
+				<label for="idphoto"> Photo : </label> <input type="file" id="idphoto"/><br/>
+				<!-- label for idphoto pas obligatoire, type file permet d'afficher un bouton Parcourir et quand on le clique l'explorateur windows 
+				apparaît, le nom du fichier s'affiche automatiquement après la sélection .... mais on s'en sert pas, on va passer par php (gestion
+				de données qui facilite le travail et gère les problèmes de sécurité (le js est un cheval de troie pour les hackers !! -->				-->
+				<input type="submit" value="Ajouter" onclick="ajout_Eleve()" /> <!-- création d'unn bouton Ajouter qui appelle ajout_eleve au moment du clic -->
+			</form>
+		</div>
+		
+		
+		<!-- Création d'une division -->
+		<div>
+			
+			<!-- Création d'un tableau -->
+			<table>	
+			
+				<!-- Création de l'entête (elle est vide pour le moment) -->
+				<thead>
+				</thead>
+				
+				<!-- Création du corps du tableau (il est vide pour le moment) -->
+				<tbody>
+				</tbody>	
+			</table>
+		
+		</div>
+	
+	</body>
+</html>
